@@ -7,5 +7,5 @@
  */
 int _isupper(int c)
 {
-	return (c >= 'A' && v <= 'Z');
+	return (c >= 'A' && c <= 'Z');
 }
