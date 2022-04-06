@@ -13,7 +13,7 @@ char *argstostr(int ac, char **av)
 	int i, j, k = 0, l = 0;
 	char *s;
 
-	if (ac <= 0 || av == NULL)
+	if (ac == 0 || av == NULL)
 		return (NULL);
 
 	for (i = 0; i < ac; i++)
@@ -29,11 +29,11 @@ char *argstostr(int ac, char **av)
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; *(*(av + i) + j); j++, k++)
-			*(s + k) = *(*(av + 1) + j);
+			*(s + k) = *(*(av + i ) + j);
 
-		*(s + k) = '\n';
+		s[k] = '\n';
 		k++;
 	}
-
+	*(s + k) = '\0';
 	return (s);
 }
