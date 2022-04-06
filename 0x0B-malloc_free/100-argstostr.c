@@ -21,15 +21,14 @@ char *argstostr(int ac, char **av)
 		for (j = 0; *(*(av + i) + j); j++, l++)
 			l++;
 	}
-	l++;
-	s = malloc(sizeof(char));
+	s = malloc(sizeof(char) * l);
 
 	if (s == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; *(*(av + i) + j); j++, k++)
-			*(s + k) = *(*(av + i ) + j);
+			*(s + k) = *(*(av + i) + j);
 
 		s[k] = '\n';
 		k++;
